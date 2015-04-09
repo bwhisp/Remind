@@ -25,9 +25,9 @@ Remind<br/>
 &emsp;├ code<br/>
 &emsp;│&emsp;├ server : REST server source code<br/>
 &emsp;│&emsp;└ client : Mobile client source code<br/>
-&emsp;└ doc
+&emsp;└ doc<br/>
 &emsp;&emsp;├ URL : Contains the URL of the REST server installed on a computed named Morpheus <br/>
-&emsp;.&emsp;└ serveur : Exhaustive documentation of our REST API in HTML formatting. <br/>
+&emsp;&emsp;└ serveur : Exhaustive documentation of our REST API in HTML formatting. <br/>
 
 ---
 
