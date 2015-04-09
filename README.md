@@ -27,7 +27,8 @@ Remind<br/>
 	│	└ client : Mobile client source code<br/>
 	└ doc
 		├ URL : Contains the URL of the REST server installed on a computed named Morpheus <br/>
-		
+		└ serveur : Exhaustive documentation of our REST API in HTML formatting. <br/>
+
 ---
 
 ## Membres du groupe de projet - Project members
