@@ -22,12 +22,12 @@ Remind is a "todo" manager developed with a client-server architecture. The serv
 
 ### Structure
 Remind<br/>
-	├ code<br/>
-	│	├ server : REST server source code<br/>
-	│	└ client : Mobile client source code<br/>
-	└ doc
-		├ URL : Contains the URL of the REST server installed on a computed named Morpheus <br/>
-		└ serveur : Exhaustive documentation of our REST API in HTML formatting. <br/>
+&emsp;├ code<br/>
+&emsp;│&emsp;├ server : REST server source code<br/>
+&emsp;│&emsp;└ client : Mobile client source code<br/>
+&emsp;└ doc
+&emsp;&emsp;├ URL : Contains the URL of the REST server installed on a computed named Morpheus <br/>
+&emsp;&emsp;└ serveur : Exhaustive documentation of our REST API in HTML formatting. <br/>
 
 ---
 
