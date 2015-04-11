@@ -113,3 +113,115 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background: #F2F2F2;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#content{
+    border:1px solid #A9F5A9;
+    background: #FFF;
+    margin-left: auto;
+    margin-right:auto;
+    width: 300px;
+    height:300px;
+    overflow: auto;
+    border-radius:3px;
+}
+
+#content p{
+    padding: 1em;
+    margin: 1em;
+    background:#E6E6E6;
+    border:1px solid #BDBDBD;
+    border-radius: 4px;
+}
+
+h1{
+    color : #01DF3A;
+    font-family: 'Merienda One', cursive;
+    margin-top: 90px;
+    text-align: center;
+    padding: 1em;
+    font-size: 31px;
+}
+#note{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    overflow:auto;
+    padding:0 0 0 3px;
+    color: #00000;
+}
+#note button{margin:1em 0 0 0;}
+
+
+#note textarea{
+    border:1px solid #A9F5A9;
+    padding:6px;
+    text-decoration:none;
+    border-radius: 4px;
+    background: #00000;
+  
+    box-shadow: 0 1px 0 white;
+
+    
+}
+button{
+    border:none;
+    padding:6px;
+    text-decoration:none;
+    border-radius: 4px;
+    background: #2EFE64;
+    color:white;
+    box-shadow: 0 1px 0 white;
+    cursor: pointer;
+
+}
