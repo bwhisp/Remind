@@ -13,8 +13,8 @@ public class Mongo {
 
 	// creates the mongoClient object and connects it to the database
 	@SuppressWarnings("deprecation")
-	public Mongo() {
-		MongoClient mongoClient = new MongoClient("localhost");
+	public Mongo()throws UnknownHostException  {
+		MongoClient mongoClient = new MongoClient("localhost",27017);
 		this.db = mongoClient.getDB("myDB");
 		this.usersColl = db.getCollection("users");
 		this.tasksColl = db.getCollection("tasks");

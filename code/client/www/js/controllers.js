@@ -33,7 +33,9 @@ angular.module('starter.controllers', [])
 		Loader.loadAllTasks ( function (data, status) {
 			if (status == "Success") {
 				for (var i = 0; i < data.tasks.length ; i++) {
-					if (data.tasks[i].owner != window.username)
+					if (data.tasks[i].owner != window.username) {
+						console.log("plop")
+					}
 				}
 			} else if (status == "Error") {
 				console.log("Error");
@@ -43,6 +45,19 @@ angular.module('starter.controllers', [])
 
 	$scope.getTask = function () {
 		$scope.task = $scope.tasks[$stateParams.taskId];
+	}
+
+	$scope.postTask = function () {
+		if (typeof($scope.newTask.description) == "undefined")
+			$scope.newTask.description = ""; 
+
+		Poster.postTask($scope.newTask, function (data, status) {
+			if (status == "Success") {
+				console.log("Task successfully created !!")
+			} else if (status == "Error") {
+				console.log("Error");
+			}
+		});
 	}
 })
 

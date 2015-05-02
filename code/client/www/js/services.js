@@ -100,5 +100,40 @@ angular.module('starter.services', [])
   };
 
   return loader;
-});
+})
 
+.factory('Poster' , function ($http) {
+  var poster = {};
+
+  poster.postTask = function (newTask, callback) {
+    var req = {
+      method : 'POST',
+      url : 'http://akammous.rmorpheus.enseirb.fr/Remind/tasks',
+      headers : {
+        'Content-Type' : undefined,
+      },
+      data : {
+        owner : window.username,
+        title : newTask.title,
+        description : newTask.description,
+        deadline : newTask.deadline
+      }
+    };
+
+    $http(req).success( function (data, status) {
+      callback(data, "Success");
+    }).error ( function (data, status) {
+      callback(data, "Error");
+    });
+  };
+
+  poster.editTask = function () {
+
+  };
+
+  poster.editProfile = function () {
+
+  };
+
+  return poster;
+});

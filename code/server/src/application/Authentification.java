@@ -2,6 +2,7 @@ package application;
 
 public class Authentification {
 	private String currUser;
+	private boolean ok;
 
 	public Authentification(String currUser, String hashPass) {
 		this.currUser = currUser;
@@ -11,9 +12,9 @@ public class Authentification {
 		return this.currUser;
 	}
 	
-	private int authentificate(String user, String hashPass) {
+	private boolean authentificate(String user, String hashPass) {
 		
-		return 0;
+		return false;
 	}
 		
 }
