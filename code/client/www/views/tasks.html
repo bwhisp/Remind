@@ -1,26 +1,15 @@
-<ion-view view-title="Let's Note">
-
-<ion-modal-view>
- 
-  <ion-content>
-  <div class="bar bar-header bar-dark">
-  <h1 class="title">Let's Note !</h1>
-</div>
+<ion-view view-title="List of tasks" ng-init="showAllTasks()">
+<ion-content>
 
 <div class="list">
-  <label class="item item-input">
-    <input type="text" placeholder="Title">
-  </label>
-  
-  <label class="item item-input">
-    <textarea placeholder="Comments..."></textarea>
-  </label>
+	<ion-list>
+		<a class="item item-icon-right" ng-repeat="task in tasks" href="#/tab/tasks/{{task.id}}">
+			<i class="icon ion-chevron-right icon-accessory"></i>
+			<h2>{{task.title}}</h2>
+			<p> {{task.owner}} </p>
+		</a>
+	</ion-list>
+</div>
 
-
-<button  class="ion-android-send"></button>
-
-
-  </ion-content>
-</ion-modal-view>
+</ion-content>
 </ion-view>
-

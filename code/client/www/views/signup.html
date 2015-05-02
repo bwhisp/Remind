@@ -1,24 +1,66 @@
-<ion-view view-title="LogIn">
+<ion-view view-title="Sign up">
 
-<ion-modal-view>
- 
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-  <label class="item item-input">
-    <span class="input-label">Email</span>
-    <input type="text">
-  </label>
-  <label class="item item-input">
-    <span class="input-label">Password</span>
-    <input type="password">
-  </label>
+<ion-content>
+<div ng-app="starter">
+	<form class="form-horizontal" ng-submit="doSignup()">
+		<div class="list">
 
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Submit</button>
-        </label>
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+			<label class="item item-input item-stacked-label">
+				<div class="form-group">
+					<span class="input-label">Username</span>
+					<input id="Firstname" type="text" class="form-control" ng-model="username" required>
+				</div>
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<div class="form-group">
+					<span class="input-label">First name</span>
+					<input id="Firstname" type="text" class="form-control" ng-model="firstName" required>
+				</div>
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<div class="form-group">
+					<span class="input-label">Last name</span>
+					<input id="Lastname" type="text" class="form-control" ng-model="lastName" required>
+				</div>
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<div class="form-group">
+					<span class="input-label">Email</span>
+					<input id="Email" type="email" class="form-control" ng-model="email" required>
+				</div>
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<div class="form-group">
+					<span class="input-label">Password</span>
+					<input type="password" name="password" ng-model="password" ng-minlength="6" required>
+					<span class="text-danger" ng-show="registerForm.password.$error.minlength">
+						Doit contenir au minimum 6 caractères
+					</span>
+				</div>
+
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<div class="form-group">
+					<span class="input-label">Confirm Password</span>
+					<input type="password" equals-to="registerForm.password" required>
+				</div>
+			</label>
+
+			<div class="buttons">
+				<input type ="submit" class="button button-positive" value="Sign up"ng-disabled="registerForm.$invalid">
+				<a class="button button-positive" href="#/tab/login">
+					You have an account ? Log in !
+				</a>
+			</div>
+
+		</div>
+	</form>
+</div>
+
+</ion-content>
 </ion-view>

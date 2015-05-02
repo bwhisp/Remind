@@ -1,0 +1,21 @@
+<ion-view view-title="Let's Note" ng-init="showAllTasks()">
+<ion-content>
+
+<div>
+	<a class="button button-positive" href="#/tab/mytasks/newtask"> New task </a>	
+
+</div>
+
+<div class="list">
+	<ion-list>
+	<a class="item item-icon-right" ng-repeat="task in tasks" href="#/tab/tasks/{{task.id}}">
+		<i class="icon ion-chevron-right icon-accessory"></i>
+		<h2>{{task.title}}</h2>
+		<p> {{task.owner}} </p>
+	</a>
+</ion-list>
+</div>
+
+
+</ion-content>
+</ion-view>

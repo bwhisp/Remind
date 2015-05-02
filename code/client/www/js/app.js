@@ -11,10 +11,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if (window.StatusBar) {
+  if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+  }
+  if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
@@ -30,57 +30,82 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "views/tabs.html"
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.listtasks', {
-    url: '/listtasks',
+  .state('tab.tasks', {
+    url: '/tasks',
     views: {
-      'tab-listtasks': {
-        templateUrl: 'views/listtasks.html',
-        controller: 'ListTasksCtrl'
+      'tab-tasks': {
+        templateUrl: 'views/tasks.html',
+        controller: 'TasksCtrl'
+      }
+    }
+  })
+  .state('tab.task-detail', {
+    url: '/tasks/:taskId',
+    views: {
+      'tab-tasks': {
+        templateUrl: 'views/task-detail.html',
+        controller: 'TasksCtrl'
       }
     }
   })
 
-  .state('tab.tasks', {
-      url: '/tasks',
-      views: {
-        'tab-tasks': {
-          templateUrl: 'views/tasks.html',
-          controller: 'TasksCtrl'
-        }
+  .state('tab.mytasks', {
+    url: '/mytasks',
+    views: {
+      'tab-mytasks': {
+        templateUrl: 'views/mytasks.html',
+        controller: 'TasksCtrl'
       }
-    })
-    .state('tab.signup', {
-      url: '/signup',
-      views: {
-        'tab-signup': {
-          templateUrl: 'views/signup.html',
-          controller: 'SignupCtrl'
-        }
+    }
+  })
+  .state('tab.newtask', {
+    url: '/mytasks/newtask',
+    views: {
+      'tab-mytasks': {
+        templateUrl: 'views/newtask.html',
+        controller: 'TasksCtrl'
       }
-    })
+    }
+  })
+
 
   .state('tab.login', {
     url: '/login',
     views: {
       'tab-login': {
         templateUrl: 'views/login.html',
-        controller: 'loginCtrl'
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+  .state('tab.signup', {
+    url: '/signup',
+    views: {
+      'tab-login': {
+        templateUrl: 'views/signup.html',
+        controller: 'LoginCtrl'
       }
     }
   })
 
-
-  ;
+  .state('tab.profile', {
+    url: '/profile',
+    views: {
+      'tab-profile': {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/tasks');
 
 });
