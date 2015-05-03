@@ -24,7 +24,7 @@ angular.module('starter.services', [])
     }).error ( function (data, status) {
       callback(data, "Error");
     })
-  }
+  };
 
   logger.doSignup = function (user, callback) {
     var req = {
@@ -47,40 +47,42 @@ angular.module('starter.services', [])
     }).error ( function (data, status) {
       callback(data, "Error");
     })
-  }
+  };
 
   logger.doLogout = function () {
     username = "";
     name = "";
-  }
+  };
 
   logger.setUsername = function (name) {
     username = name;
-  }
+  };
 
   logger.setUser = function (userObj) {
     user = userObj;
-  }
+  };
 
   logger.getUsername = function () {
     return username;
-  }
+  };
 
   logger.getUser = function () {
     return user;
-  }
+  };
 
   var hashPassword = function (pass) {
-    return pass;
-  }
+    var salt = "C3rV3@ù";    
+    return sha1(sha1(pass)+salt);
+  };
 
   return logger;
 })
 
-.factory('Loader', function ($http) { 
+.factory('Loader', function ($http, $ionicLoading) { 
   var loader = {};
 
   loader.loadAllTasks = function (callback) {
+
     var req = {
       method : 'GET',
       url : 'http://akammous.rmorpheus.enseirb.fr/Remind/tasks',
@@ -91,11 +93,13 @@ angular.module('starter.services', [])
 
       }
     }
-
+    $ionicLoading.show();
     $http(req).success( function (data, status) {
       callback(data, "Success");
+      $ionicLoading.hide();
     }).error ( function (data, status) {
       callback(data, "Error");
+      $ionicLoading.hide();
     })
   };
 

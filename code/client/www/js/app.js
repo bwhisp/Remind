@@ -74,6 +74,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.edittask', {
+    url: '/mytasks/:taskId/edit',
+    views : {
+      'tab-mytasks': {
+        templateUrl : 'views/edittask.html',
+        controller: 'TasksCtrl'
+      }
+    }
+  })
 
 
   .state('tab.login', {
@@ -100,6 +109,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-profile': {
         templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  })
+  .state('tab.edituser', {
+    url: '/profile/edit',
+    views: {
+      'tab-profile': {
+        templateUrl: 'views/edituser.html',
         controller: 'ProfileCtrl'
       }
     }

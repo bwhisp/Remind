@@ -1,13 +1,35 @@
 <ion-view view-title="Detail of task : {{task.title}} " ng-init="getTask()">
 <ion-content>
+<div class="list card">
 
-<div class="card">
-	<h3>{{task.title}} </h3>
-	<h5>{{task.owner}} </h5>
-	<p>{{task.description}} </p>
-	<br/>
-	<h5>Due  {{task.deadline}} </h5>
+	<div class="item item-avatar">
+		<img src="mcfly.jpg">
+		<h2> {{task.title}}</h2>
+		<p> From : {{task.owner}} Due : {{task.deadline}} </p>
+	</div>
+
+	<div class="item item-body">
+		<p>	{{task.description}} </p>		
+	</div>
+
+	<div class="item tabs tabs-secondary tabs-icon-left">
+		<a class="tab-item" href="#/tab/mytasks/{{task.id}}/edit">
+			<i class="icon ion-thumbsup"></i>
+			Edit task
+		</a>
+
+		<a class="tab-item" ng-click="toggleTaskDone(task)">
+			<i class="icon ion-thumbsup"></i>
+			<span ng-hide="task.isFinished">Task done !</span>
+			<span ng-show="task.isFinished">Task in progress...</span>
+		</a>
+
+		<a class="tab-item">
+			<i class="icon ion-chatbox" ng-click="console.log('plop')"></i>
+			Delete task
+		</a>+
+	</div>
+
 </div>
-
 </ion-content>
 </ion-view>

@@ -6,13 +6,15 @@ angular.module('starter.controllers', [])
 		title : "One",
 		owner : "Mr White",
 		deadline : "03/05/2015",
-		description : "One one one"
+		description : "One one one",
+		isFinished : true
 	},
 	{ 	id : 2,
 		title : "Two",
 		owner : "Mr Blue",
 		deadline : "Today",
-		description : "Two to too"
+		description : "Two to too",
+		isFinished : false
 	}
 	];
 
@@ -95,5 +97,12 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileCtrl', function($scope) {
+	$scope.user = {
+		username : "Abdou",
+		firstName : "Le",
+		lastName : "magic",
+		email : "plop@plop.com"
+	}
 
+	
 });
